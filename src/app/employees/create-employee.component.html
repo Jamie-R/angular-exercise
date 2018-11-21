@@ -15,6 +15,9 @@
         />
       </div>
 
+      <!-- the controls on this page should probably be defined in separate
+      files and injected onto this page rather than coding them all here.-->
+
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -62,11 +65,36 @@
               Male
             </label>
             <label class="radio-inline">
-                <input type="radio" value="female" name="gender"
-                [(ngModel)]="gender"/>
-                Female
-              </label>
+              <input type="radio" value="female" name="gender"
+              [(ngModel)]="gender"/>
+              Female
+            </label>
           </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-control">
+            <label class="checkbox-inline">
+              <input type="checkbox"
+              name="isActive" 
+              [(ngModel)]="isActive"/>
+              Is Active
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="department">
+            Department
+          </label>
+          <select id="department"
+            name="department" 
+            [(ngModel)]="department"
+            class="form-control">
+            <option *ngFor="let dept of departments" [value]="dept.id">
+              {{dept.name}}
+            </option>>
+          </select>
         </div>
         
     </div>
